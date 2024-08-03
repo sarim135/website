@@ -120,5 +120,6 @@ st.write("You can contact me by clicking here on the email:heart:")
 st.write("muhammadsarim0864@gmail.com")
 st.subheader("<> MY GITHUB LINK ")
 st.markdown("[<My githublink>](https://github.com/sarim135/IOT-112-Sarim)")
-# underconstruction heading
-st.title("UNDER DEVELOPMENT:smile:")
+
+# finishing my work.
+st.title("THANK YOU EVERYONE:heart:")
