@@ -4,7 +4,7 @@ import os
 import google.generativeai as genai
 
 
-# my api key
+# my api key. Here i'm adding the scret because the api key should not be mentioned.
 my_api_key = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=my_api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -91,11 +91,26 @@ st.slider("practical performing",0,100,60)
 
 # now for uploading file.
 st.file_uploader("upload the file")
+
+# im giving some extra info so check this out
+persona = """
+        you are the Sarim AI Bot. You help people by answering he questions about yourself(i.e Sarim). You have done an undergraduated program with FSC Pre-Engineering.
+        Sarim is a youtuber and has the youtube channel named MOBI TECH. You are curruntly studying in the NLC Mandra
+        for the china scholorship. Your course length is about for 3 years. And in NLC you are learning IOT 
+        which stands for Inernet Of Things. 
+
+        Sarim's Youtube Channel: https://youtube.com/@mobitech6622?si=02iZCHv1AtKW2fwu
+        Sarim's Email: contact@sarim.com
+        Sarim's Gtihub Link: https://github.com/sarim135/website
+        """
+
+
 # Taking the inputs form the user.
 st.title("ANY QUESTIONS?")
 user_question = st.text_input("You can ask any questoins here:thumbsup:") 
+st.button("search")
 if st.button("search"):
-    prompt = user_question
+    prompt =  persona +"Here is the question that the user asked: " + user_question
     response = model.generate_content(prompt)
     st.write(response.text)
 
