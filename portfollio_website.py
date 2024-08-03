@@ -108,7 +108,6 @@ persona = """
 # Taking the inputs form the user.
 st.title("ANY QUESTIONS?")
 user_question = st.text_input("You can ask any questoins here:thumbsup:") 
-st.button("search")
 if st.button("search"):
     prompt =  persona +"Here is the question that the user asked: " + user_question
     response = model.generate_content(prompt)
